@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
+    "start:dev": "nodemon --watch",
     "start": "nodemon index.js"
   },
   "author": "",
