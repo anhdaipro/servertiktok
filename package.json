@@ -4,17 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "nodemon index.js",
-  "test": "react-scripts test --env=jsdom",
-  "eject": "react-scripts eject",
-  "heroku-postbuild": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "nodemon": "^2.0.16",
     "socket.io": "^4.5.1"
   },
   "devDependencies": {
