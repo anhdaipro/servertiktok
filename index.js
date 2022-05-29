@@ -28,13 +28,13 @@ io.on('connection', socket => {
     io.emit("message", {data});
   })
   socket.on("offer", (id, message) => {
-    socket.to(id).emit("offer", socket.id, message);
+    socket.emit("offer", socket.id, message);
   });
   socket.on("answer", (id, message) => {
-    socket.to(id).emit("answer", socket.id, message);
+    socket.emit("answer", socket.id, message);
   });
   socket.on("candidate", (id, message) => {
-    socket.to(id).emit("candidate", socket.id, message);
+    socket.emit("candidate", socket.id, message);
   });
   socket.on("disconnect", () => {
     console.log("Client disconnected"); // Khi client disconnect thì log ra terminal.
