@@ -15,11 +15,11 @@ io.on('connection', socket => {
   console.log("New client connected" + socket.id); 
     socket.on('stream', data=> {
     // send stream back to room
-      socket.broadcast.emit('stream',{data});
+      socket.broadcast.emit('live',{data});
   });
   
   socket.on("message", (data) => {
-    io.emit("message", {data});
+    io.emit("sendData", {data});
   })
   socket.on("disconnect", () => {
     console.log("Client disconnected"); // Khi client disconnect thì log ra terminal.
