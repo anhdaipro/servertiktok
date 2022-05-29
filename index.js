@@ -18,8 +18,8 @@ io.on('connection', socket => {
       socket.broadcast.emit('live',{data});
   });
   
-  socket.on("message", (data) => {
-    io.emit("sendData", {data});
+  socket.on("sendData", (data) => {
+    io.emit("message", {data});
   })
   socket.on("disconnect", () => {
     console.log("Client disconnected"); // Khi client disconnect thì log ra terminal.
