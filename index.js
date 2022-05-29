@@ -22,7 +22,7 @@ io.on('connection', socket => {
     socket.broadcast.emit("broadcaster");
   });
   socket.on("watcher", () => {
-    socket.to(broadcaster).emit("watcher", socket.id);
+    socket.to(broadcaster).emit("watch", socket.id);
   });
   socket.on("sendData", (data) => {
     io.emit("message", {data});
