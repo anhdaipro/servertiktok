@@ -17,7 +17,13 @@ io.on('connection', socket => {
     // send stream back to room
       socket.broadcast.emit('live',{data});
   });
-  
+  socket.on("broadcaster", () => {
+    broadcaster = socket.id;
+    socket.broadcast.emit("broadcaster");
+  });
+  socket.on("watcher", () => {
+    socket.to(broadcaster).emit("watcher", socket.id);
+  });
   socket.on("sendData", (data) => {
     io.emit("message", {data});
   })
